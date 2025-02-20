@@ -1197,3 +1197,340 @@
 2025-02-05 09:45:25.277 | ERROR    | __main__:consume_messages_from_kafka:148 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
 2025-02-05 09:45:25.277 | ERROR    | __main__:main:203 - Unexpected error: Invalid file descriptor: -1
 2025-02-05 09:45:25.278 | INFO     | __main__:main:205 - Consumer shutting down.
+2025-02-13 19:36:47.385 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 19:36:47.393 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 19:36:47.394 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 19:36:47.394 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 19:36:47.394 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 19:36:47.394 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 19:36:47.394 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 19:36:47.394 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 19:36:47.394 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-13 19:36:47.394 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-13 19:36:47.395 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 19:36:47.395 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-13 19:36:47.395 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 19:36:47.395 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 19:36:47.395 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 19:36:49.421 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 19:36:49.421 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 19:40:24.148 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 19:40:24.149 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 19:40:24.149 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 19:40:24.149 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 19:40:24.149 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 19:40:24.149 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 19:40:24.149 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 19:40:24.149 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 19:40:24.149 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-13 19:40:24.150 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-13 19:40:24.150 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 19:40:24.150 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 19:40:24.150 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 19:40:24.150 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 19:40:26.183 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 19:40:26.184 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 19:42:40.078 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 19:42:40.079 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 19:42:40.079 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 19:42:40.079 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 19:42:40.079 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 19:42:40.079 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 19:42:40.079 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 19:42:40.079 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 19:42:40.079 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-13 19:42:40.079 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-13 19:42:40.079 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 19:42:40.080 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 19:42:40.080 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 19:42:40.080 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 19:42:42.120 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 19:42:42.122 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 14:39:45.776 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 14:39:45.778 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 14:39:45.778 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 14:39:45.778 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 14:39:45.778 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 14:39:45.778 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 14:39:45.779 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 14:39:45.779 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 14:39:45.779 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 14:39:45.779 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 14:39:45.779 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 14:39:45.779 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 14:39:45.779 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 14:39:45.779 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 14:39:47.847 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 14:39:47.848 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 14:50:28.295 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 14:50:28.295 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 14:50:28.296 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 14:50:28.296 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 14:50:28.296 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 14:50:28.296 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 14:50:28.296 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 14:50:28.296 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 14:50:28.296 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 14:50:30.352 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 14:50:30.353 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 15:28:54.449 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 15:28:54.463 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 15:28:54.463 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 15:28:54.463 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 15:28:54.464 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 15:28:54.464 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 15:28:54.464 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 15:28:54.464 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 15:28:54.464 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 15:28:54.464 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 15:28:54.464 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 15:28:54.465 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 15:28:54.465 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 15:28:54.465 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 15:28:56.562 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 15:28:56.563 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 16:04:18.518 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 16:04:18.519 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 16:04:18.519 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 16:04:18.519 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 16:04:18.519 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 16:04:18.519 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 16:04:18.519 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 16:04:18.519 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 16:04:18.519 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 16:04:18.519 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 16:04:18.520 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 16:04:18.520 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 16:04:18.520 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 16:04:18.520 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 16:04:20.564 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 16:04:20.566 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 16:56:15.177 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 16:56:15.178 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 16:56:15.178 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 16:56:15.179 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 16:56:15.179 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 16:56:15.179 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 16:56:15.179 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 16:56:15.179 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 16:56:15.180 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 16:56:15.180 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 16:56:15.180 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 16:56:15.180 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 16:56:15.180 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 16:56:15.180 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 16:56:17.238 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 16:56:17.239 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 17:43:15.797 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 17:43:15.798 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 17:43:15.798 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 17:43:15.798 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 17:43:15.798 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 17:43:15.798 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 17:43:15.798 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 17:43:15.798 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 17:43:15.798 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 17:43:17.850 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 17:43:17.851 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 17:58:18.774 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 17:58:18.775 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 17:58:18.775 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 17:58:18.775 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 17:58:18.775 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 17:58:18.775 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 17:58:18.775 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 17:58:18.775 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 17:58:18.775 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 17:58:18.775 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 17:58:18.775 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 17:58:18.775 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 17:58:18.776 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 17:58:18.776 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 17:58:20.834 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 17:58:20.835 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 18:00:57.977 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 18:01:23.322 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 18:01:23.322 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 18:01:23.322 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 18:01:23.323 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 18:01:23.323 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 18:01:23.323 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 18:01:23.323 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 18:01:23.323 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 18:01:23.323 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 18:01:25.370 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 18:01:25.371 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 18:05:44.121 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 18:05:44.121 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 18:05:44.122 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 18:05:44.122 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 18:05:44.122 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 18:05:44.122 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 18:05:44.122 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 18:05:44.122 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 18:05:44.122 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 18:05:44.122 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 18:05:44.122 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 18:05:44.122 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 18:05:44.123 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 18:05:44.123 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-19 18:05:46.181 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 18:05:46.182 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 18:06:13.544 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 18:06:13.546 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 18:06:13.546 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 18:06:13.546 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 18:06:13.546 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 18:06:13.546 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 18:06:13.546 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 18:06:13.546 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-19 18:06:13.546 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 18:06:13.546 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 18:06:13.546 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 18:06:13.547 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 18:06:13.547 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 18:06:13.547 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:9092
+2025-02-19 18:06:15.608 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-19 18:06:15.609 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-19 18:12:21.267 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-19 18:12:21.267 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-19 18:12:21.267 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-19 18:12:21.268 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-19 18:12:21.268 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-19 18:12:21.268 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-19 18:12:21.268 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-19 18:12:21.268 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-19 18:12:21.268 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-19 18:12:21.272 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-19 18:12:21.272 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-19 18:12:21.602 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'U9IjyWNaSN6G7P8-gf2a1Q', 'controller_id': 1001}
+2025-02-19 18:12:21.707 | INFO     | __main__:main:162 - Kafka producer connected to Localhost:9092
+2025-02-19 18:12:21.707 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-19 18:12:22.030 | INFO     | utils.utils_producer:create_kafka_topic:154 - Creating 'buzzline'.
+2025-02-19 18:12:22.150 | INFO     | utils.utils_producer:create_kafka_topic:159 - Topic 'buzzline' created successfully.
+2025-02-19 18:12:22.150 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-19 18:12:22.150 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-19 18:12:22.150 | INFO     | __main__:main:178 - {'message': 'I just loved JavaScript! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-19 18:12:22', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-19 18:12:22.151 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved JavaScript! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-19 18:12:22', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-19 18:12:22.157 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved JavaScript! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-19 18:12:22', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-19 18:12:24.561 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-19 18:12:24.563 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-19 18:12:24.564 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-20 17:12:07.863 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 17:12:07.864 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-20 17:12:07.865 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-20 17:12:07.865 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-20 17:12:07.865 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-20 17:12:07.865 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 17:12:07.865 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 17:12:07.865 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:07.865 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 17:12:07.865 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-20 17:12:07.865 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-20 17:12:07.869 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-20 17:12:07.869 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-20 17:12:07.869 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-20 17:12:07.869 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 17:12:07.876 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 17:12:07.876 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:08.200 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 17:12:08.308 | INFO     | __main__:main:162 - Kafka producer connected to Localhost:9092
+2025-02-20 17:12:08.308 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:08.621 | INFO     | utils.utils_producer:create_kafka_topic:154 - Creating 'buzzline'.
+2025-02-20 17:12:08.742 | INFO     | utils.utils_producer:create_kafka_topic:159 - Topic 'buzzline' created successfully.
+2025-02-20 17:12:08.742 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-20 17:12:08.742 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-20 17:12:08.743 | INFO     | __main__:main:178 - {'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:08.745 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:08.751 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:12.891 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 17:12:12.916 | INFO     | __main__:main:167 - Starting Consumer to run continuously.
+2025-02-20 17:12:12.916 | INFO     | __main__:main:168 - Things can fail or get interrupted, so use a try block.
+2025-02-20 17:12:12.916 | INFO     | __main__:main:169 - Moved .env variables into a utils config module.
+2025-02-20 17:12:12.916 | INFO     | __main__:main:171 - STEP 1. Read environment variables using new config functions.
+2025-02-20 17:12:12.916 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 17:12:12.916 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:12.917 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-20 17:12:12.917 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 17:12:12.917 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 17:12:12.917 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite
+2025-02-20 17:12:12.917 | INFO     | __main__:main:178 - SUCCESS: Read environment variables.
+2025-02-20 17:12:12.917 | INFO     | __main__:main:183 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-20 17:12:12.920 | INFO     | __main__:main:187 - SUCCESS: Deleted database file.
+2025-02-20 17:12:12.920 | INFO     | __main__:main:192 - STEP 3. Initialize a new database with an empty table.
+2025-02-20 17:12:12.920 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-20 17:12:12.926 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-20 17:12:12.951 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite.
+2025-02-20 17:12:12.951 | INFO     | __main__:main:199 - STEP 4. Begin consuming and storing messages.
+2025-02-20 17:12:12.951 | INFO     | __main__:consume_messages_from_kafka:100 - Called consume_messages_from_kafka() with:
+2025-02-20 17:12:12.951 | INFO     | __main__:consume_messages_from_kafka:101 -    topic='buzzline'
+2025-02-20 17:12:12.951 | INFO     | __main__:consume_messages_from_kafka:102 -    kafka_url='Localhost:9092'
+2025-02-20 17:12:12.952 | INFO     | __main__:consume_messages_from_kafka:103 -    group='buzz_group'
+2025-02-20 17:12:12.952 | INFO     | __main__:consume_messages_from_kafka:104 -    sql_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 17:12:12.952 | INFO     | __main__:consume_messages_from_kafka:105 -    interval_secs=5
+2025-02-20 17:12:12.952 | INFO     | __main__:consume_messages_from_kafka:107 - Step 1. Verify Kafka Services.
+2025-02-20 17:12:12.952 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 17:12:12.956 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 17:12:12.956 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:13.278 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 17:12:13.279 | INFO     | __main__:consume_messages_from_kafka:114 - Step 2. Create a Kafka consumer.
+2025-02-20 17:12:13.279 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:13.279 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-20 17:12:13.384 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-20 17:12:13.384 | INFO     | __main__:consume_messages_from_kafka:125 - Step 3. Verify topic exists.
+2025-02-20 17:12:13.384 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 17:12:13.704 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-20 17:12:13.705 | INFO     | __main__:consume_messages_from_kafka:129 - Kafka topic 'buzzline' is ready.
+2025-02-20 17:12:13.705 | INFO     | __main__:consume_messages_from_kafka:136 - Step 4. Process messages.
+2025-02-20 17:12:13.752 | INFO     | __main__:main:178 - {'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:13.752 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:13.752 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:15.011 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-20 17:12:15.011 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:15.011 | INFO     | __main__:process_message:70 - Processed message: {'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:15.011 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 17:12:15.012 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just saw a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 17:12:08', 'category': 'other', 'sentiment': 0.21, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 17:12:15.012 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 17:12:15.035 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-20 17:12:15.035 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-20 17:12:15.035 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:15.035 | INFO     | __main__:process_message:70 - Processed message: {'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:15.035 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 17:12:15.035 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just saw a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 17:12:13', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-20 17:12:15.036 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 17:12:15.045 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-20 17:12:18.753 | INFO     | __main__:main:178 - {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.753 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.754 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.757 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-20 17:12:18.757 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.757 | INFO     | __main__:process_message:70 - Processed message: {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.757 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 17:12:18.757 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 17:12:18', 'category': 'entertainment', 'sentiment': 0.09, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 17:12:18.757 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 17:12:18.768 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-20 17:12:20.596 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-20 17:12:20.598 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-20 17:12:20.598 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-20 17:12:21.260 | WARNING  | __main__:main:205 - Consumer interrupted by user.
+2025-02-20 17:12:21.260 | INFO     | __main__:main:209 - Consumer shutting down.
