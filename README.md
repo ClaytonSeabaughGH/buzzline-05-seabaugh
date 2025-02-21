@@ -23,7 +23,7 @@ This Kafka consumer is designed to consume JSON messages from a live data stream
 ### 1️⃣ Install Dependencies
 Make sure you have the necessary Python packages installed. Run:
 ```bash
-pip install kafka-python sqlite3
+pip install -r requirements.txt
 ```
 
 ### 2️⃣ Configure Environment Variables
