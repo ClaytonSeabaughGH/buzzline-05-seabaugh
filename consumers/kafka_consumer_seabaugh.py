@@ -1,5 +1,5 @@
 """
-kafka_consumer_case.py
+kafka_consumer_seabaugh.py
 
 Consume json messages from a live data file. 
 Insert the processed messages into a database.
@@ -15,7 +15,7 @@ Example JSON message
     "message_length": 42
 }
 
-Database functions are in consumers/db_sqlite_case.py.
+Database functions are in consumers/db_sqlite_seabaugh.py.
 Environment variables are in utils/utils_config module. 
 """
 
@@ -28,6 +28,7 @@ import json
 import os
 import pathlib
 import sys
+from itertools import combinations
 
 # import external modules
 from kafka import KafkaConsumer
@@ -40,7 +41,7 @@ from utils.utils_producer import verify_services, is_topic_available
 
 # Ensure the parent directory is in sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from consumers.db_sqlite_case import init_db, insert_message
+from consumers.db_sqlite_seabaugh import init_db, insert_message
 
 #####################################
 # Function to process a single message
@@ -55,6 +56,7 @@ def process_message(message: dict) -> None:
     Args:
         message (dict): The JSON message as a Python dictionary.
     """
+   
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
     try:

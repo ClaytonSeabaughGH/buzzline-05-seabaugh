@@ -1,5 +1,5 @@
 """
-file_consumer_case.py
+file_consumer_seabaugh.py
 
 Consume json messages from a live data file. 
 Insert the processed messages into a database.
@@ -15,7 +15,7 @@ Example JSON message
     "message_length": 42
 }
 
-Database functions are in consumers/db_sqlite_case.py.
+Database functions are in consumers/db_sqlite_seabaugh.py.
 Environment variables are in utils/utils_config module. 
 """
 
@@ -32,7 +32,7 @@ import time
 # import from local modules
 import utils.utils_config as config
 from utils.utils_logger import logger
-from .db_sqlite_case import init_db, insert_message
+from .db_sqlite_seabaugh import init_db, insert_message
 
 #####################################
 # Function to process a single message
