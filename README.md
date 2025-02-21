@@ -1,4 +1,4 @@
-# Kafka Consumer: Seabaugh Edition
+# Kafka Consumer: Seabaugh Edition (buzzline-05-seabaugh)
 
 Welcome to **Kafka Consumer: Seabaugh Edition**, where real-time data processing meets fun and functionality! 🚀
 
