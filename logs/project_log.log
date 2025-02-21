@@ -1914,3 +1914,229 @@
 2025-02-20 18:23:46.271 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
 2025-02-20 18:23:47.259 | WARNING  | __main__:main:218 - Consumer interrupted by user.
 2025-02-20 18:23:47.260 | INFO     | __main__:main:222 - Consumer shutting down.
+2025-02-20 19:15:22.108 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 19:15:22.108 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-20 19:15:22.108 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-20 19:15:22.108 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-20 19:15:22.108 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-20 19:15:22.109 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 19:15:22.109 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 19:15:22.109 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:22.109 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 19:15:22.109 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-20 19:15:22.109 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-20 19:15:22.112 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-20 19:15:22.112 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-20 19:15:22.112 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-20 19:15:22.112 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 19:15:22.116 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 19:15:22.116 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:22.453 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 19:15:22.559 | INFO     | __main__:main:162 - Kafka producer connected to Localhost:9092
+2025-02-20 19:15:22.559 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:22.875 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-20 19:15:22.875 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:23.197 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-20 19:15:23.198 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-20 19:15:23.198 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-20 19:15:23.199 | INFO     | __main__:main:178 - {'message': 'I just shared a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:23', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-20 19:15:23.200 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:23', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-20 19:15:23.201 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:23', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-20 19:15:28.201 | INFO     | __main__:main:178 - {'message': 'I just shared JavaScript! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:28', 'category': 'tech', 'sentiment': 0.27, 'keyword_mentioned': 'JavaScript', 'message_length': 39}
+2025-02-20 19:15:28.203 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared JavaScript! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:28', 'category': 'tech', 'sentiment': 0.27, 'keyword_mentioned': 'JavaScript', 'message_length': 39}
+2025-02-20 19:15:28.206 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared JavaScript! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:28', 'category': 'tech', 'sentiment': 0.27, 'keyword_mentioned': 'JavaScript', 'message_length': 39}
+2025-02-20 19:15:33.207 | INFO     | __main__:main:178 - {'message': 'I just shared Python! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 19:15:33', 'category': 'tech', 'sentiment': 0.79, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 19:15:33.209 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared Python! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 19:15:33', 'category': 'tech', 'sentiment': 0.79, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 19:15:33.212 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared Python! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 19:15:33', 'category': 'tech', 'sentiment': 0.79, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 19:15:35.775 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 19:15:35.777 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 19:15:35.777 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:35.779 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-20 19:15:35.779 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 19:15:35.779 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 19:15:35.779 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite
+2025-02-20 19:15:35.782 | INFO     | consumers.db_sqlite_seabaugh:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-20 19:15:35.782 | INFO     | consumers.db_sqlite_seabaugh:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-20 19:15:35.795 | INFO     | consumers.db_sqlite_seabaugh:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite.
+2025-02-20 19:15:35.795 | INFO     | __main__:consume_messages_from_kafka:83 - Starting Kafka Consumer
+2025-02-20 19:15:35.795 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 19:15:35.800 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 19:15:35.800 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:36.119 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 19:15:36.120 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:36.121 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-20 19:15:36.225 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-20 19:15:36.226 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 19:15:36.550 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-20 19:15:36.553 | ERROR    | __main__:consume_messages_from_kafka:94 - Error consuming messages: Invalid file descriptor: -1
+2025-02-20 19:15:38.215 | INFO     | __main__:main:178 - {'message': 'I just tried an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 19:15:38', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 19:15:38.215 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 19:15:38', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 19:15:38.216 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 19:15:38', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 19:15:40.057 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-20 19:15:40.058 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-20 19:15:40.058 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-20 20:31:36.235 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 20:31:36.236 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-20 20:31:36.236 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-20 20:31:36.236 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-20 20:31:36.236 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-20 20:31:36.236 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 20:31:36.237 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 20:31:36.237 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:36.237 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 20:31:36.237 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-20 20:31:36.237 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-20 20:31:36.241 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-20 20:31:36.241 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-20 20:31:36.241 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-20 20:31:36.241 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 20:31:36.271 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 20:31:36.271 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:36.590 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 20:31:36.694 | INFO     | __main__:main:162 - Kafka producer connected to Localhost:9092
+2025-02-20 20:31:36.694 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:37.006 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-20 20:31:37.006 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:37.320 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-20 20:31:37.321 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-20 20:31:37.321 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-20 20:31:37.321 | INFO     | __main__:main:178 - {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:37', 'category': 'other', 'sentiment': 0.7, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:37.322 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:37', 'category': 'other', 'sentiment': 0.7, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:37.322 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:37', 'category': 'other', 'sentiment': 0.7, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:42.323 | INFO     | __main__:main:178 - {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:42', 'category': 'other', 'sentiment': 0.92, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:42.324 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:42', 'category': 'other', 'sentiment': 0.92, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:42.324 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:42', 'category': 'other', 'sentiment': 0.92, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:47.326 | INFO     | __main__:main:178 - {'message': 'I just tried recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:47', 'category': 'food', 'sentiment': 0.74, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-20 20:31:47.327 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:47', 'category': 'food', 'sentiment': 0.74, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-20 20:31:47.330 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:47', 'category': 'food', 'sentiment': 0.74, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-20 20:31:49.149 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 20:31:49.150 | INFO     | __main__:main:274 - Starting Consumer to run continuously.
+2025-02-20 20:31:49.150 | INFO     | __main__:main:275 - Moved .env variables into a utils config module.
+2025-02-20 20:31:49.151 | INFO     | __main__:main:277 - STEP 1. Read environment variables using new config functions.
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 20:31:49.151 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite
+2025-02-20 20:31:49.151 | INFO     | __main__:main:284 - SUCCESS: Read environment variables.
+2025-02-20 20:31:49.151 | INFO     | __main__:main:289 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-20 20:31:49.154 | INFO     | __main__:main:293 - SUCCESS: Deleted database file.
+2025-02-20 20:31:49.154 | INFO     | __main__:main:298 - STEP 3. Initialize a new database with an empty table.
+2025-02-20 20:31:49.170 | INFO     | __main__:main:305 - STEP 4. Begin consuming and storing messages.
+2025-02-20 20:31:49.170 | INFO     | __main__:consume_messages_from_kafka:211 - Called consume_messages_from_kafka() with:
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:212 -    topic='buzzline'
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:213 -    kafka_url='Localhost:9092'
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:214 -    group='buzz_group'
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:215 -    sql_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:216 -    interval_secs=5
+2025-02-20 20:31:49.171 | INFO     | __main__:consume_messages_from_kafka:218 - Step 1. Verify Kafka Services.
+2025-02-20 20:31:49.171 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 20:31:49.174 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 20:31:49.176 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:49.502 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 20:31:49.503 | INFO     | __main__:consume_messages_from_kafka:225 - Step 2. Create a Kafka consumer.
+2025-02-20 20:31:49.504 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:49.505 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-20 20:31:49.613 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-20 20:31:49.614 | INFO     | __main__:consume_messages_from_kafka:236 - Step 3. Verify topic exists.
+2025-02-20 20:31:49.615 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 20:31:49.937 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-20 20:31:49.938 | INFO     | __main__:consume_messages_from_kafka:240 - Kafka topic 'buzzline' is ready.
+2025-02-20 20:31:49.938 | INFO     | __main__:consume_messages_from_kafka:247 - Step 4. Process messages.
+2025-02-20 20:31:50.061 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.061 | INFO     | __main__:process_message:87 -    message={'message': 'I just shared a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:23', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-20 20:31:50.061 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:31:50.061 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just shared a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:23', 'category': 'unknown', 'sentiment': 0.84, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-20 20:31:50.072 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.072 | INFO     | __main__:process_message:87 -    message={'message': 'I just shared JavaScript! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:28', 'category': 'tech', 'sentiment': 0.27, 'keyword_mentioned': 'JavaScript', 'message_length': 39}
+2025-02-20 20:31:50.072 | INFO     | __main__:process_message:98 - Alert: Detected category 'tech' for keyword 'JavaScript'
+2025-02-20 20:31:50.072 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just shared JavaScript! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 19:15:28', 'category': 'tech', 'sentiment': 0.27, 'sentiment_category': 'positive', 'keyword_mentioned': 'JavaScript', 'message_length': 39}
+2025-02-20 20:31:50.082 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.082 | INFO     | __main__:process_message:87 -    message={'message': 'I just shared Python! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 19:15:33', 'category': 'tech', 'sentiment': 0.79, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:31:50.083 | INFO     | __main__:process_message:98 - Alert: Detected category 'tech' for keyword 'Python'
+2025-02-20 20:31:50.083 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just shared Python! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 19:15:33', 'category': 'tech', 'sentiment': 0.79, 'sentiment_category': 'positive', 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:31:50.093 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.093 | INFO     | __main__:process_message:87 -    message={'message': 'I just tried an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 19:15:38', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:31:50.093 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:31:50.093 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just tried an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 19:15:38', 'category': 'unknown', 'sentiment': 0.34, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:31:50.103 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.103 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:37', 'category': 'other', 'sentiment': 0.7, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:50.103 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:31:50.103 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:37', 'category': 'unknown', 'sentiment': 0.7, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:50.113 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.114 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:42', 'category': 'other', 'sentiment': 0.92, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:50.114 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:31:50.114 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:42', 'category': 'unknown', 'sentiment': 0.92, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 20:31:50.123 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:50.123 | INFO     | __main__:process_message:87 -    message={'message': 'I just tried recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:47', 'category': 'food', 'sentiment': 0.74, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-20 20:31:50.123 | INFO     | __main__:process_message:98 - Alert: Detected category 'food' for keyword 'recipe'
+2025-02-20 20:31:50.124 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just tried recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:31:47', 'category': 'food', 'sentiment': 0.74, 'sentiment_category': 'positive', 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-20 20:31:52.331 | INFO     | __main__:main:178 - {'message': 'I just found a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-20 20:31:52', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:31:52.331 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-20 20:31:52', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:31:52.332 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-20 20:31:52', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:31:52.333 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:52.334 | INFO     | __main__:process_message:87 -    message={'message': 'I just found a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-20 20:31:52', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:31:52.334 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:31:52.334 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just found a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-20 20:31:52', 'category': 'unknown', 'sentiment': 0.96, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:31:57.333 | INFO     | __main__:main:178 - {'message': 'I just saw game! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 20:31:57', 'category': 'gaming', 'sentiment': 0.15, 'keyword_mentioned': 'game', 'message_length': 30}
+2025-02-20 20:31:57.333 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw game! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 20:31:57', 'category': 'gaming', 'sentiment': 0.15, 'keyword_mentioned': 'game', 'message_length': 30}
+2025-02-20 20:31:57.333 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw game! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 20:31:57', 'category': 'gaming', 'sentiment': 0.15, 'keyword_mentioned': 'game', 'message_length': 30}
+2025-02-20 20:31:57.335 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:31:57.335 | INFO     | __main__:process_message:87 -    message={'message': 'I just saw game! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 20:31:57', 'category': 'gaming', 'sentiment': 0.15, 'keyword_mentioned': 'game', 'message_length': 30}
+2025-02-20 20:31:57.335 | INFO     | __main__:process_message:98 - Alert: Detected category 'gaming' for keyword 'game'
+2025-02-20 20:31:57.335 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just saw game! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-20 20:31:57', 'category': 'gaming', 'sentiment': 0.15, 'sentiment_category': 'positive', 'keyword_mentioned': 'game', 'message_length': 30}
+2025-02-20 20:32:02.334 | INFO     | __main__:main:178 - {'message': 'I just loved Python! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:02', 'category': 'tech', 'sentiment': 0.7, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:32:02.336 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved Python! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:02', 'category': 'tech', 'sentiment': 0.7, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:32:02.338 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved Python! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:02', 'category': 'tech', 'sentiment': 0.7, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:32:02.343 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:02.344 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved Python! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:02', 'category': 'tech', 'sentiment': 0.7, 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:32:02.344 | INFO     | __main__:process_message:98 - Alert: Detected category 'tech' for keyword 'Python'
+2025-02-20 20:32:02.344 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved Python! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:02', 'category': 'tech', 'sentiment': 0.7, 'sentiment_category': 'positive', 'keyword_mentioned': 'Python', 'message_length': 36}
+2025-02-20 20:32:07.340 | INFO     | __main__:main:178 - {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 20:32:07', 'category': 'entertainment', 'sentiment': 0.71, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:07.342 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 20:32:07', 'category': 'entertainment', 'sentiment': 0.71, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:07.345 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 20:32:07', 'category': 'entertainment', 'sentiment': 0.71, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:07.350 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:07.351 | INFO     | __main__:process_message:87 -    message={'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 20:32:07', 'category': 'entertainment', 'sentiment': 0.71, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:07.351 | INFO     | __main__:process_message:98 - Alert: Detected category 'entertainment' for keyword 'movie'
+2025-02-20 20:32:07.351 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just tried a movie! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-20 20:32:07', 'category': 'entertainment', 'sentiment': 0.71, 'sentiment_category': 'positive', 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:12.346 | INFO     | __main__:main:178 - {'message': 'I just found game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 20:32:12', 'category': 'gaming', 'sentiment': 0.92, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-20 20:32:12.346 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 20:32:12', 'category': 'gaming', 'sentiment': 0.92, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-20 20:32:12.346 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 20:32:12', 'category': 'gaming', 'sentiment': 0.92, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-20 20:32:12.349 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:12.349 | INFO     | __main__:process_message:87 -    message={'message': 'I just found game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 20:32:12', 'category': 'gaming', 'sentiment': 0.92, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-20 20:32:12.349 | INFO     | __main__:process_message:98 - Alert: Detected category 'gaming' for keyword 'game'
+2025-02-20 20:32:12.349 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just found game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 20:32:12', 'category': 'gaming', 'sentiment': 0.92, 'sentiment_category': 'positive', 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-20 20:32:17.348 | INFO     | __main__:main:178 - {'message': 'I just loved a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-20 20:32:17', 'category': 'entertainment', 'sentiment': 0.39, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:17.349 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-20 20:32:17', 'category': 'entertainment', 'sentiment': 0.39, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:17.351 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-20 20:32:17', 'category': 'entertainment', 'sentiment': 0.39, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:17.356 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:17.356 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-20 20:32:17', 'category': 'entertainment', 'sentiment': 0.39, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:17.356 | INFO     | __main__:process_message:98 - Alert: Detected category 'entertainment' for keyword 'movie'
+2025-02-20 20:32:17.357 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-20 20:32:17', 'category': 'entertainment', 'sentiment': 0.39, 'sentiment_category': 'positive', 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-20 20:32:22.353 | INFO     | __main__:main:178 - {'message': 'I just loved a story! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:22', 'category': 'other', 'sentiment': 0.6, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:32:22.354 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a story! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:22', 'category': 'other', 'sentiment': 0.6, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:32:22.355 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a story! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:22', 'category': 'other', 'sentiment': 0.6, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:32:22.358 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:22.358 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved a story! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:22', 'category': 'other', 'sentiment': 0.6, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:32:22.359 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:32:22.359 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved a story! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:22', 'category': 'unknown', 'sentiment': 0.6, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-20 20:32:27.356 | INFO     | __main__:main:178 - {'message': 'I just shared a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:27', 'category': 'humor', 'sentiment': 0.74, 'keyword_mentioned': 'meme', 'message_length': 38}
+2025-02-20 20:32:27.358 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:27', 'category': 'humor', 'sentiment': 0.74, 'keyword_mentioned': 'meme', 'message_length': 38}
+2025-02-20 20:32:27.360 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:27', 'category': 'humor', 'sentiment': 0.74, 'keyword_mentioned': 'meme', 'message_length': 38}
+2025-02-20 20:32:27.365 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:27.366 | INFO     | __main__:process_message:87 -    message={'message': 'I just shared a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:27', 'category': 'humor', 'sentiment': 0.74, 'keyword_mentioned': 'meme', 'message_length': 38}
+2025-02-20 20:32:27.367 | INFO     | __main__:process_message:98 - Alert: Detected category 'humor' for keyword 'meme'
+2025-02-20 20:32:27.367 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just shared a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:27', 'category': 'humor', 'sentiment': 0.74, 'sentiment_category': 'positive', 'keyword_mentioned': 'meme', 'message_length': 38}
+2025-02-20 20:32:32.362 | INFO     | __main__:main:178 - {'message': 'I just loved an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:32', 'category': 'other', 'sentiment': 0.81, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:32:32.362 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:32', 'category': 'other', 'sentiment': 0.81, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:32:32.363 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:32', 'category': 'other', 'sentiment': 0.81, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:32:32.367 | INFO     | __main__:process_message:86 - Called process_message() with:
+2025-02-20 20:32:32.367 | INFO     | __main__:process_message:87 -    message={'message': 'I just loved an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:32', 'category': 'other', 'sentiment': 0.81, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:32:32.367 | WARNING  | __main__:process_message:100 - Keyword 'other' not found in categories
+2025-02-20 20:32:32.368 | INFO     | __main__:process_message:114 - Processed message: {'message': 'I just loved an app! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 20:32:32', 'category': 'unknown', 'sentiment': 0.81, 'sentiment_category': 'positive', 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-20 20:32:34.978 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-20 20:32:34.979 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-20 20:32:34.979 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-20 20:32:36.703 | WARNING  | __main__:main:311 - Consumer interrupted by user.
+2025-02-20 20:32:36.705 | INFO     | __main__:main:315 - Consumer shutting down.

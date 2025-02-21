@@ -7,6 +7,7 @@ Insert the processed messages into a database.
 Enhancements:
 - Track and alert for categories based on keyword mentions using KEYWORD_CATEGORIES.
 - Insert processed messages into SQLite with determined categories.
+- Track sentiment categories (positive, negative, neutral) and store them in the database.
 """
 
 #####################################
@@ -18,7 +19,6 @@ import json
 import os
 import pathlib
 import sys
-from itertools import combinations
 
 # import external modules
 from kafka import KafkaConsumer
@@ -31,7 +31,6 @@ from utils.utils_producer import verify_services, is_topic_available
 
 # Ensure the parent directory is in sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from consumers.db_sqlite_seabaugh import init_db, insert_message
 
 # Define keyword to category mapping
 KEYWORD_CATEGORIES = {
@@ -45,7 +44,30 @@ KEYWORD_CATEGORIES = {
 }
 
 #####################################
-# Function to process a single message
+# Function to Categorize Sentiment
+#####################################
+
+
+def categorize_sentiment(sentiment_score: float) -> str:
+    """
+    Categorize the sentiment based on the sentiment score.
+
+    Args:
+        sentiment_score (float): The sentiment score.
+
+    Returns:
+        str: The sentiment category ('positive', 'negative', or 'neutral').
+    """
+    if sentiment_score > 0.1:
+        return "positive"
+    elif sentiment_score < -0.1:
+        return "negative"
+    else:
+        return "neutral"
+
+
+#####################################
+# Function to Process a Single Message
 #####################################
 
 
@@ -59,7 +81,7 @@ def process_message(message: dict) -> dict:
         message (dict): The JSON message as a Python dictionary.
 
     Returns:
-        dict: Processed message with determined category.
+        dict: Processed message with determined category and sentiment category.
     """
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
@@ -67,6 +89,8 @@ def process_message(message: dict) -> dict:
     try:
         keyword_mentioned = message.get("keyword_mentioned")
         category = KEYWORD_CATEGORIES.get(keyword_mentioned, "unknown")
+        sentiment_score = float(message.get("sentiment", 0.0))
+        sentiment_category = categorize_sentiment(sentiment_score)
 
         # Log alerts based on keyword and category detection
         if keyword_mentioned:
@@ -82,7 +106,8 @@ def process_message(message: dict) -> dict:
             "author": message.get("author"),
             "timestamp": message.get("timestamp"),
             "category": category,
-            "sentiment": float(message.get("sentiment", 0.0)),
+            "sentiment": sentiment_score,
+            "sentiment_category": sentiment_category,
             "keyword_mentioned": keyword_mentioned,
             "message_length": int(message.get("message_length", 0)),
         }
@@ -90,6 +115,74 @@ def process_message(message: dict) -> dict:
     except Exception as e:
         logger.error(f"Error processing message: {e}")
     return processed_message
+
+
+#####################################
+# Initialize SQLite Database
+#####################################
+
+
+def init_db(sql_path: pathlib.Path):
+    """
+    Initialize the SQLite database with a table to store messages.
+
+    Args:
+        sql_path (pathlib.Path): Path to the SQLite database file.
+    """
+    import sqlite3
+
+    conn = sqlite3.connect(sql_path)
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            message TEXT,
+            author TEXT,
+            timestamp TEXT,
+            category TEXT,
+            sentiment REAL,
+            sentiment_category TEXT,
+            keyword_mentioned TEXT,
+            message_length INTEGER
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+
+#####################################
+# Insert Processed Message into SQLite
+#####################################
+
+
+def insert_message(message: dict, sql_path: pathlib.Path):
+    """
+    Insert a processed message into the SQLite database.
+
+    Args:
+        message (dict): The processed message.
+        sql_path (pathlib.Path): Path to the SQLite database file.
+    """
+    import sqlite3
+
+    conn = sqlite3.connect(sql_path)
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO messages (
+            message, author, timestamp, category, sentiment, sentiment_category, keyword_mentioned, message_length
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (
+        message["message"],
+        message["author"],
+        message["timestamp"],
+        message["category"],
+        message["sentiment"],
+        message["sentiment_category"],
+        message["keyword_mentioned"],
+        message["message_length"],
+    ))
+    conn.commit()
+    conn.close()
 
 
 #####################################
