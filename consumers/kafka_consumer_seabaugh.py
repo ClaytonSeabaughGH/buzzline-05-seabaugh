@@ -4,19 +4,9 @@ kafka_consumer_seabaugh.py
 Consume json messages from a live data file. 
 Insert the processed messages into a database.
 
-Example JSON message
-{
-    "message": "I just shared a meme! It was amazing.",
-    "author": "Charlie",
-    "timestamp": "2025-01-29 14:35:20",
-    "category": "humor",
-    "sentiment": 0.87,
-    "keyword_mentioned": "meme",
-    "message_length": 42
-}
-
-Database functions are in consumers/db_sqlite_seabaugh.py.
-Environment variables are in utils/utils_config module. 
+Enhancements:
+- Track and alert for categories based on keyword mentions using KEYWORD_CATEGORIES.
+- Insert processed messages into SQLite with determined categories.
 """
 
 #####################################
@@ -43,37 +33,63 @@ from utils.utils_producer import verify_services, is_topic_available
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from consumers.db_sqlite_seabaugh import init_db, insert_message
 
+# Define keyword to category mapping
+KEYWORD_CATEGORIES = {
+    "meme": "humor",
+    "Python": "tech",
+    "JavaScript": "tech",
+    "recipe": "food",
+    "travel": "travel",
+    "movie": "entertainment",
+    "game": "gaming",
+}
+
 #####################################
 # Function to process a single message
-# #####################################
+#####################################
 
 
-def process_message(message: dict) -> None:
+def process_message(message: dict) -> dict:
     """
     Process and transform a single JSON message.
+    Determines category based on keyword_mentioned using KEYWORD_CATEGORIES.
     Converts message fields to appropriate data types.
 
     Args:
         message (dict): The JSON message as a Python dictionary.
+
+    Returns:
+        dict: Processed message with determined category.
     """
-   
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
+    processed_message = None
     try:
+        keyword_mentioned = message.get("keyword_mentioned")
+        category = KEYWORD_CATEGORIES.get(keyword_mentioned, "unknown")
+
+        # Log alerts based on keyword and category detection
+        if keyword_mentioned:
+            if category != "unknown":
+                logger.info(f"Alert: Detected category '{category}' for keyword '{keyword_mentioned}'")
+            else:
+                logger.warning(f"Keyword '{keyword_mentioned}' not found in categories")
+        else:
+            logger.warning("No keyword mentioned in message")
+
         processed_message = {
             "message": message.get("message"),
             "author": message.get("author"),
             "timestamp": message.get("timestamp"),
-            "category": message.get("category"),
+            "category": category,
             "sentiment": float(message.get("sentiment", 0.0)),
-            "keyword_mentioned": message.get("keyword_mentioned"),
+            "keyword_mentioned": keyword_mentioned,
             "message_length": int(message.get("message_length", 0)),
         }
         logger.info(f"Processed message: {processed_message}")
-        return processed_message
     except Exception as e:
         logger.error(f"Error processing message: {e}")
-        return None
+    return processed_message
 
 
 #####################################
@@ -142,14 +158,10 @@ def consume_messages_from_kafka(
         sys.exit(13)
 
     try:
-        # consumer is a KafkaConsumer
-        # message is a kafka.consumer.fetcher.ConsumerRecord
-        # message.value is a Python dictionary
         for message in consumer:
             processed_message = process_message(message.value)
             if processed_message:
                 insert_message(processed_message, sql_path)
-
     except Exception as e:
         logger.error(f"ERROR: Could not consume messages from Kafka: {e}")
         raise
@@ -167,7 +179,6 @@ def main():
     Reads configuration, initializes the database, and starts consumption.
     """
     logger.info("Starting Consumer to run continuously.")
-    logger.info("Things can fail or get interrupted, so use a try block.")
     logger.info("Moved .env variables into a utils config module.")
 
     logger.info("STEP 1. Read environment variables using new config functions.")

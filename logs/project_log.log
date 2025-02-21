@@ -1703,3 +1703,214 @@
 2025-02-20 17:16:58.753 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
 2025-02-20 17:16:59.531 | WARNING  | __main__:main:205 - Consumer interrupted by user.
 2025-02-20 17:16:59.532 | INFO     | __main__:main:209 - Consumer shutting down.
+2025-02-20 18:22:41.751 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 18:22:41.752 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-20 18:22:41.752 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-20 18:22:41.752 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-20 18:22:41.752 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-20 18:22:41.752 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 18:22:41.752 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 18:22:41.753 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:41.753 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 18:22:41.753 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\project_live.json
+2025-02-20 18:22:41.753 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-20 18:22:41.760 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-20 18:22:41.761 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-20 18:22:41.761 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-20 18:22:41.761 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 18:22:41.767 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 18:22:41.767 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:42.095 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 18:22:42.207 | INFO     | __main__:main:162 - Kafka producer connected to Localhost:9092
+2025-02-20 18:22:42.207 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:42.525 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-20 18:22:42.526 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:42.838 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-20 18:22:42.839 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-20 18:22:42.839 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-20 18:22:42.839 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:42.839 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:42.840 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:47.841 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:47.841 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:47.842 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:52.843 | INFO     | __main__:main:178 - {'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:52.844 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:52.846 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:57.847 | INFO     | __main__:main:178 - {'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:57.847 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:57.848 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:58.244 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-20 18:22:58.256 | INFO     | __main__:main:181 - Starting Consumer to run continuously.
+2025-02-20 18:22:58.256 | INFO     | __main__:main:182 - Moved .env variables into a utils config module.
+2025-02-20 18:22:58.256 | INFO     | __main__:main:184 - STEP 1. Read environment variables using new config functions.
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\clayt\Documents\buzzline-05-seabaugh\data
+2025-02-20 18:22:58.257 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite
+2025-02-20 18:22:58.257 | INFO     | __main__:main:191 - SUCCESS: Read environment variables.
+2025-02-20 18:22:58.257 | INFO     | __main__:main:196 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-20 18:22:58.273 | INFO     | __main__:main:200 - SUCCESS: Deleted database file.
+2025-02-20 18:22:58.273 | INFO     | __main__:main:205 - STEP 3. Initialize a new database with an empty table.
+2025-02-20 18:22:58.273 | INFO     | consumers.db_sqlite_seabaugh:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-20 18:22:58.274 | INFO     | consumers.db_sqlite_seabaugh:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-20 18:22:58.324 | INFO     | consumers.db_sqlite_seabaugh:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\clayt\Documents\buzzline-05-seabaugh\data\buzz.sqlite.
+2025-02-20 18:22:58.324 | INFO     | __main__:main:212 - STEP 4. Begin consuming and storing messages.
+2025-02-20 18:22:58.324 | INFO     | __main__:consume_messages_from_kafka:118 - Called consume_messages_from_kafka() with:
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:119 -    topic='buzzline'
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:120 -    kafka_url='Localhost:9092'
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:121 -    group='buzz_group'
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:122 -    sql_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:123 -    interval_secs=5
+2025-02-20 18:22:58.325 | INFO     | __main__:consume_messages_from_kafka:125 - Step 1. Verify Kafka Services.
+2025-02-20 18:22:58.326 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-20 18:22:58.331 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-20 18:22:58.331 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:58.650 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'WuEFFyuWTdm_LSIBbwweSg', 'controller_id': 1001}
+2025-02-20 18:22:58.651 | INFO     | __main__:consume_messages_from_kafka:132 - Step 2. Create a Kafka consumer.
+2025-02-20 18:22:58.651 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:58.651 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-20 18:22:58.757 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-20 18:22:58.757 | INFO     | __main__:consume_messages_from_kafka:143 - Step 3. Verify topic exists.
+2025-02-20 18:22:58.757 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-20 18:22:59.074 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-20 18:22:59.075 | INFO     | __main__:consume_messages_from_kafka:147 - Kafka topic 'buzzline' is ready.
+2025-02-20 18:22:59.075 | INFO     | __main__:consume_messages_from_kafka:154 - Step 4. Process messages.
+2025-02-20 18:22:59.509 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:22:59.510 | INFO     | __main__:process_message:65 -    message={'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:59.511 | INFO     | __main__:process_message:74 - Alert: Detected category 'travel' for keyword 'travel'
+2025-02-20 18:22:59.511 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:59.512 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:22:59.512 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just found travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:42', 'category': 'travel', 'sentiment': 0.52, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-20 18:22:59.513 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:22:59.529 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:22:59.529 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:22:59.529 | INFO     | __main__:process_message:65 -    message={'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:59.529 | INFO     | __main__:process_message:74 - Alert: Detected category 'travel' for keyword 'travel'
+2025-02-20 18:22:59.529 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:59.530 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:22:59.530 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just found travel! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:47', 'category': 'travel', 'sentiment': 0.61, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-20 18:22:59.530 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:22:59.541 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:22:59.542 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:22:59.542 | INFO     | __main__:process_message:65 -    message={'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:59.542 | WARNING  | __main__:process_message:76 - Keyword 'other' not found in categories
+2025-02-20 18:22:59.542 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'unknown', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:59.542 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:22:59.542 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just tried a trick! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-20 18:22:52', 'category': 'unknown', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:22:59.542 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:22:59.552 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:22:59.553 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:22:59.553 | INFO     | __main__:process_message:65 -    message={'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:59.553 | INFO     | __main__:process_message:74 - Alert: Detected category 'food' for keyword 'recipe'
+2025-02-20 18:22:59.553 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:59.553 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:22:59.553 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just saw recipe! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:22:57', 'category': 'food', 'sentiment': 0.01, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-20 18:22:59.553 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:22:59.564 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:02.850 | INFO     | __main__:main:178 - {'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.850 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.852 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.854 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:02.854 | INFO     | __main__:process_message:65 -    message={'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.854 | INFO     | __main__:process_message:74 - Alert: Detected category 'humor' for keyword 'meme'
+2025-02-20 18:23:02.855 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.855 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:02.855 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just tried a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:02', 'category': 'humor', 'sentiment': 0.23, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-20 18:23:02.855 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:02.904 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:07.853 | INFO     | __main__:main:178 - {'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.853 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.853 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.855 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:07.855 | INFO     | __main__:process_message:65 -    message={'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.855 | INFO     | __main__:process_message:74 - Alert: Detected category 'food' for keyword 'recipe'
+2025-02-20 18:23:07.855 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.855 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:07.855 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just loved recipe! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-20 18:23:07', 'category': 'food', 'sentiment': 0.33, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-20 18:23:07.856 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:07.897 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:12.854 | INFO     | __main__:main:178 - {'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'other', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.856 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'other', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.859 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'other', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.864 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:12.864 | INFO     | __main__:process_message:65 -    message={'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'other', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.865 | WARNING  | __main__:process_message:76 - Keyword 'other' not found in categories
+2025-02-20 18:23:12.865 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'unknown', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.865 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:12.866 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:12', 'category': 'unknown', 'sentiment': 0.88, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-20 18:23:12.866 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:12.925 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:17.860 | INFO     | __main__:main:178 - {'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.861 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.863 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.865 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:17.866 | INFO     | __main__:process_message:65 -    message={'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.866 | INFO     | __main__:process_message:74 - Alert: Detected category 'food' for keyword 'recipe'
+2025-02-20 18:23:17.866 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.867 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:17.867 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just saw recipe! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:17', 'category': 'food', 'sentiment': 0.19, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-20 18:23:17.867 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:17.903 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:22.864 | INFO     | __main__:main:178 - {'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'other', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.864 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'other', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.864 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'other', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.867 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:22.867 | INFO     | __main__:process_message:65 -    message={'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'other', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.868 | WARNING  | __main__:process_message:76 - Keyword 'other' not found in categories
+2025-02-20 18:23:22.868 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'unknown', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.868 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:22.868 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just loved a story! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:22', 'category': 'unknown', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-20 18:23:22.868 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:22.922 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:27.865 | INFO     | __main__:main:178 - {'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.866 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.868 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.873 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:27.874 | INFO     | __main__:process_message:65 -    message={'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'other', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.874 | WARNING  | __main__:process_message:76 - Keyword 'other' not found in categories
+2025-02-20 18:23:27.874 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'unknown', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.875 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:27.875 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just shared an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:27', 'category': 'unknown', 'sentiment': 0.34, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-20 18:23:27.876 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:27.926 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:32.871 | INFO     | __main__:main:178 - {'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.871 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.872 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.874 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:32.874 | INFO     | __main__:process_message:65 -    message={'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.874 | INFO     | __main__:process_message:74 - Alert: Detected category 'tech' for keyword 'JavaScript'
+2025-02-20 18:23:32.875 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.875 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:32.875 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just shared JavaScript! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:32', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 42}
+2025-02-20 18:23:32.875 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:32.919 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:37.873 | INFO     | __main__:main:178 - {'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.874 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.876 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.880 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:37.880 | INFO     | __main__:process_message:65 -    message={'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.881 | INFO     | __main__:process_message:74 - Alert: Detected category 'gaming' for keyword 'game'
+2025-02-20 18:23:37.881 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.881 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:37.882 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just found game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-20 18:23:37', 'category': 'gaming', 'sentiment': 0.31, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-20 18:23:37.882 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:37.933 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:42.878 | INFO     | __main__:main:178 - {'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.880 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.883 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.888 | INFO     | __main__:process_message:64 - Called process_message() with:
+2025-02-20 18:23:42.889 | INFO     | __main__:process_message:65 -    message={'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.890 | INFO     | __main__:process_message:74 - Alert: Detected category 'gaming' for keyword 'game'
+2025-02-20 18:23:42.890 | INFO     | __main__:process_message:89 - Processed message: {'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.891 | INFO     | consumers.db_sqlite_seabaugh:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-20 18:23:42.891 | INFO     | consumers.db_sqlite_seabaugh:insert_message:93 - message={'message': 'I just shared game! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-20 18:23:42', 'category': 'gaming', 'sentiment': 0.5, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-02-20 18:23:42.891 | INFO     | consumers.db_sqlite_seabaugh:insert_message:94 - db_path=WindowsPath('C:/Users/clayt/Documents/buzzline-05-seabaugh/data/buzz.sqlite')
+2025-02-20 18:23:42.902 | INFO     | consumers.db_sqlite_seabaugh:insert_message:117 - Inserted one message into the database.
+2025-02-20 18:23:46.270 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-20 18:23:46.271 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-20 18:23:46.271 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-20 18:23:47.259 | WARNING  | __main__:main:218 - Consumer interrupted by user.
+2025-02-20 18:23:47.260 | INFO     | __main__:main:222 - Consumer shutting down.
